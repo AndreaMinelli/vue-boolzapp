@@ -10,13 +10,21 @@ body {
 }
 
 header {
-  height: 70px;
+  height: 60px;
   padding: 10px;
   background-color: rgb(234, 234, 234);
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: default;
+}
+
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }
 
 /* # DA ELIMINARE */
@@ -29,15 +37,20 @@ img {
   display: block;
 }
 
-/* Header */
+/* Utils */
 
-header .user-pic {
-  width: 50px;
+.circle-pic {
   border-radius: 50%;
   overflow: hidden;
   margin: 0px;
   margin-right: 5px;
   cursor: pointer;
+}
+
+/* Header */
+
+header .user-pic {
+  width: 50px;
 }
 
 header .fa-solid {
@@ -50,4 +63,38 @@ header .fa-solid {
 header .last-access {
   font-size: 14px;
   color: rgb(177, 177, 177);
+}
+
+/* User and contacts col */
+
+.notifications {
+  background-color: rgb(142, 218, 252);
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.notifications .circle-pic {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications .fa-solid {
+  color: rgb(142, 218, 252);
+  font-size: 20px;
+}
+
+.notifications h6 {
+  font-size: 14px;
+}
+
+.notifications p {
+  font-size: 13px;
+  text-decoration: underline;
+  color: grey;
+  cursor: pointer;
 }
