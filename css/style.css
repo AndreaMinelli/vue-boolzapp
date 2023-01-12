@@ -25,6 +25,7 @@ footer {
   background-color: rgb(243, 238, 234);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 h6 {
@@ -49,6 +50,10 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+input:focus-visible {
+  outline: none;
 }
 
 /* Utils */
@@ -154,10 +159,6 @@ header .last-access {
   font-weight: 600;
 }
 
-.filter-input input:focus-visible {
-  outline: none;
-}
-
 /* Chat list */
 .chat-list {
   height: calc(100% - 160px);
@@ -187,4 +188,27 @@ header .last-access {
   background-image: url(../img/mine.jpg);
   background-position: center;
   background-repeat: repeat;
+}
+
+/* Footer */
+
+footer [class^="fa"] {
+  font-size: 23px;
+  color: grey;
+  margin: 0px 15px;
+  cursor: pointer;
+}
+
+footer input {
+  border: none;
+  border-radius: 3px;
+  flex-grow: 1;
+  padding: 5px 15px;
+  line-height: 30px;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+footer input::placeholder {
+  font-size: 14px;
 }
