@@ -37,6 +37,12 @@ img {
   display: block;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* Utils */
 
 .circle-pic {
@@ -144,4 +150,25 @@ header .last-access {
 
 .filter-input input:focus-visible {
   outline: none;
+}
+
+/* Chat list */
+.chat-list {
+  height: calc(100% - 160px);
+  overflow-y: auto;
+}
+
+.chat-list li {
+  display: flex;
+  padding: 10px 16px;
+  border-top: 2px solid rgb(250, 250, 250);
+}
+
+.chat-list li.active {
+  background-color: rgb(233, 235, 235);
+}
+
+.chat-list figure {
+  flex-basis: 20%;
+  margin-right: 20px;
 }
