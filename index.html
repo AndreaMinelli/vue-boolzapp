@@ -43,7 +43,7 @@
                 </figure>
                 <!-- Nome utente -->
                 <div role="button" class="text-capitalize">
-                  <h6>Andrea</h6>
+                  <h6>{{ user.name }}</h6>
                 </div>
               </div>
               <!-- Controlli utente -->
@@ -75,7 +75,11 @@
             <!-- Sezione chat -->
             <section class="chat-list">
               <ul>
-                <li v-for="(contact, i) in contacts" role="button" class="">
+                <li
+                  v-for="(contact, i) in contacts"
+                  role="button"
+                  @click="changeChat"
+                  class="">
                   <figure class="circle-pic user-pic">
                     <img
                       :src="'img/avatar' + contact.avatar + '.jpg'"
@@ -89,16 +93,18 @@
             </section>
           </div>
           <!-- Colonna chat attiva -->
-          <div class="col-8 h-100">
+          <div class="col-8 h-100" v-for="contact in visibleContact">
             <header>
               <div class="d-flex align-items-center">
                 <!-- Immagine utente chat -->
                 <figure class="circle-pic user-pic">
-                  <img src="img/avatar_3.jpg" alt="User image" />
+                  <img
+                    :src="'img/avatar' + contact.avatar + '.jpg'"
+                    :alt="contact.name" />
                 </figure>
                 <!-- Info utente chat-->
                 <div role="button">
-                  <div class="text-capitalize"><h6>Michele</h6></div>
+                  <div class="text-capitalize"><h6>{{ contact.name }}</h6></div>
                   <div class="last-access fw-semibold">
                     Ultimo accesso oggi alle
                   </div>
@@ -111,21 +117,15 @@
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </div>
             </header>
-            <section class="chat-view">
+            <div class="chat-view">
               <!-- Finestra messaggi -->
-              <div class="message-box sent">
-                <div class="message-text">Hai portato a spasso il cane?</div>
-                <div class="message-time">12/01/2023</div>
+              <div
+                v-for="message in contact.messages"
+                :class="['message-box', {'sent' : isSent(message)}]">
+                <div class="message-text">{{ message.text }}</div>
+                <div class="message-time">{{ message.date }}</div>
               </div>
-              <div class="message-box sent">
-                <div class="message-text">Ricordati di dargli da mangiare</div>
-                <div class="message-time">12/01/2023</div>
-              </div>
-              <div class="message-box">
-                <div class="message-text">Tutto fatto!</div>
-                <div class="message-time">12/01/2023</div>
-              </div>
-            </section>
+            </div>
             <footer>
               <i class="fa-regular fa-face-smile"></i>
               <input type="text" placeholder="Scrivi un messaggio" />
