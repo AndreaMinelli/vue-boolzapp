@@ -98,7 +98,14 @@ const app = Vue.createApp({
     },
   },
   methods: {
-    changeChat() {},
+    changeChat(i) {
+      this.contacts.forEach((contact) => {
+        if (contact.visible) {
+          contact.visible = false;
+        }
+        this.contacts[i].visible = true;
+      });
+    },
     isSent(message) {
       return message.status === "sent";
     },
