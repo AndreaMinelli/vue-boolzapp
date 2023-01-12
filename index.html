@@ -37,7 +37,9 @@
               <div class="d-flex align-items-center">
                 <!-- Immagine utente -->
                 <figure class="circle-pic user-pic">
-                  <img src="img/avatar_2.jpg" alt="User image" />
+                  <img
+                    :src="'img/avatar'+user.avatar+'.jpg'"
+                    :alt="user.name" />
                 </figure>
                 <!-- Nome utente -->
                 <div role="button" class="text-capitalize">
