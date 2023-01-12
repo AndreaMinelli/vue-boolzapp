@@ -1,0 +1,14 @@
+/* Generals */
+body {
+  height: 100vh;
+  background: linear-gradient(
+    #009688 0%,
+    #009688 20%,
+    #dadbd4 20%,
+    #dadbd4 100%
+  );
+}
+
+.row [class^="col"] {
+  background-color: #fff;
+}
