@@ -188,6 +188,35 @@ header .last-access {
   background-image: url(../img/mine.jpg);
   background-position: center;
   background-repeat: repeat;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-view .message-box {
+  max-width: 300px;
+  min-width: 250px;
+  font-weight: 600;
+  padding: 10px 5px 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  align-self: flex-start;
+}
+
+.chat-view .message-box.sent {
+  align-self: flex-end;
+  background-color: rgb(213, 249, 186);
+}
+
+.chat-view .message-text {
+  font-size: 14px;
+}
+.chat-view .message-time {
+  text-align: end;
+  font-size: 10px;
+  color: grey;
+  line-height: 10px;
 }
 
 /* Footer */
