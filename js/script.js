@@ -90,21 +90,25 @@ const app = Vue.createApp({
           ],
         },
       ],
+      visibleElement: 0,
     };
   },
   computed: {
     visibleContact() {
       return this.contacts.filter((contact) => contact.visible);
     },
+    whoIsVisible() {
+      return this.contacts.find((contact, i) => {
+        if (contact.visible) {
+          this.visibleElement = i;
+        }
+      });
+    },
   },
   methods: {
     changeChat(i) {
-      this.contacts.forEach((contact) => {
-        if (contact.visible) {
-          contact.visible = false;
-        }
-        this.contacts[i].visible = true;
-      });
+      this.contacts[this.visibleElement].visible = false;
+      this.contacts[i].visible = true;
     },
     isSent(message) {
       return message.status === "sent";
