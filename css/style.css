@@ -203,6 +203,22 @@ header .last-access {
   padding: 10px 5px 5px 10px;
   border-radius: 10px;
   margin-bottom: 10px;
+  word-wrap: break-word;
+  cursor: pointer;
+  position: relative;
+}
+
+.chat-view .message-box .fa-solid {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  color: grey;
+}
+
+.chat-view .message-box:hover .fa-solid {
+  display: block;
 }
 
 .chat-view .message-box.sent {

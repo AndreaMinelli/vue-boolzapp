@@ -99,6 +99,7 @@ const app = Vue.createApp({
         status: "",
       },
       chatListFilter: "",
+      refI: 0,
     };
   },
   computed: {
