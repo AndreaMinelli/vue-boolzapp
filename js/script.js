@@ -156,8 +156,12 @@ const app = Vue.createApp({
         this.deleteText();
       }, 1000);
     },
-    deleteText() {
-      this.newMessage.text = "";
+    deleteText(inputType) {
+      if (inputType === "filter") {
+        this.chatListFilter = "";
+      } else {
+        this.newMessage.text = "";
+      }
     },
   },
 });

@@ -70,6 +70,7 @@
                 <input
                   type="text"
                   v-model="chatListFilter"
+                  @keyup.esc="deleteText('filter')"
                   placeholder="Cerca o inizia una nuova chat" />
               </div>
             </section>
