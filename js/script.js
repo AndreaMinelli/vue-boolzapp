@@ -120,7 +120,7 @@ const app = Vue.createApp({
       this.contacts[this.visibleElement].visible = false;
       this.contacts[i].visible = true;
     },
-    sendMessage() {
+    sentMessage() {
       const thisMoment = (this.newMessage.date = dt
         .now()
         .toFormat("dd'/'LL'/'y' 'HH':'mm':'ss"));
@@ -132,6 +132,22 @@ const app = Vue.createApp({
         }),
       });
       this.deleteText();
+      this.receivedMessage();
+    },
+    receivedMessage() {
+      setTimeout(() => {
+        const thisMoment = (this.newMessage.date = dt
+          .now()
+          .toFormat("dd'/'LL'/'y' 'HH':'mm':'ss"));
+        this.contacts[this.visibleElement].messages.push({
+          ...(this.newMessage = {
+            date: thisMoment,
+            text: "ok",
+            status: "received",
+          }),
+        });
+        this.deleteText();
+      }, 1000);
     },
     deleteText() {
       this.newMessage.text = "";
