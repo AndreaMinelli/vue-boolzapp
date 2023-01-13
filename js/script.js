@@ -128,18 +128,20 @@ const app = Vue.createApp({
       this.filteredChatList[i].visible = true;
     },
     sentMessage() {
-      const thisMoment = (this.newMessage.date = dt
-        .now()
-        .toFormat("dd'/'LL'/'y' 'HH':'mm':'ss"));
-      this.contacts[this.visibleElement].messages.push({
-        ...(this.newMessage = {
-          date: thisMoment,
-          text: this.newMessage.text,
-          status: "sent",
-        }),
-      });
-      this.deleteText();
-      this.receivedMessage();
+      if (this.newMessage.text) {
+        const thisMoment = (this.newMessage.date = dt
+          .now()
+          .toFormat("dd'/'LL'/'y' 'HH':'mm':'ss"));
+        this.contacts[this.visibleElement].messages.push({
+          ...(this.newMessage = {
+            date: thisMoment,
+            text: this.newMessage.text,
+            status: "sent",
+          }),
+        });
+        this.deleteText();
+        this.receivedMessage();
+      }
     },
     receivedMessage() {
       setTimeout(() => {

@@ -129,7 +129,7 @@
               <input
                 type="text"
                 placeholder="Scrivi un messaggio"
-                v-model="newMessage.text"
+                v-model.trim="newMessage.text"
                 @keyup.enter="sentMessage"
                 @keyup.esc="deleteText" />
               <i class="fa-solid fa-microphone"></i>
