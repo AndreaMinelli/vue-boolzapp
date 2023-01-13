@@ -125,7 +125,7 @@ const app = Vue.createApp({
     },
     changeChat(i) {
       this.contacts[this.visibleElement].visible = false;
-      this.contacts[i].visible = true;
+      this.filteredChatList[i].visible = true;
     },
     sentMessage() {
       const thisMoment = (this.newMessage.date = dt
