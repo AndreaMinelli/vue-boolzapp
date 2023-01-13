@@ -1,3 +1,5 @@
+const dt = luxon.DateTime;
+
 const app = Vue.createApp({
   data() {
     return {
@@ -91,6 +93,11 @@ const app = Vue.createApp({
         },
       ],
       visibleElement: 0,
+      newMessage: {
+        date: "",
+        text: "",
+        status: "",
+      },
     };
   },
   computed: {
@@ -113,8 +120,21 @@ const app = Vue.createApp({
       this.contacts[this.visibleElement].visible = false;
       this.contacts[i].visible = true;
     },
-    isSent(message) {
-      return message.status === "sent";
+    sendMessage() {
+      const thisMoment = (this.newMessage.date = dt
+        .now()
+        .toFormat("dd'/'LL'/'y' 'HH':'mm':'ss"));
+      this.contacts[this.visibleElement].messages.push({
+        ...(this.newMessage = {
+          date: thisMoment,
+          text: this.newMessage.text,
+          status: "sent",
+        }),
+      });
+      this.deleteText();
+    },
+    deleteText() {
+      this.newMessage.text = "";
     },
   },
 });
