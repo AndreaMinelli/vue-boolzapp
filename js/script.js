@@ -106,6 +106,9 @@ const app = Vue.createApp({
     },
   },
   methods: {
+    buildImgLink(element) {
+      return `img/avatar${element.avatar}.jpg`;
+    },
     changeChat(i) {
       this.contacts[this.visibleElement].visible = false;
       this.contacts[i].visible = true;

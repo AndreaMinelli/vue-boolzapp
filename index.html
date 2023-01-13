@@ -37,9 +37,7 @@
               <div class="d-flex align-items-center">
                 <!-- Immagine utente -->
                 <figure class="circle-pic user-pic">
-                  <img
-                    :src="'img/avatar' + user.avatar + '.jpg'"
-                    :alt="user.name" />
+                  <img :src="buildImgLink(user)" :alt="user.name" />
                 </figure>
                 <!-- Nome utente -->
                 <div role="button" class="text-capitalize">
@@ -81,9 +79,7 @@
                   @click="changeChat(i)"
                   class="">
                   <figure class="circle-pic user-pic">
-                    <img
-                      :src="'img/avatar' + contact.avatar + '.jpg'"
-                      :alt="contact.name" />
+                    <img :src="buildImgLink(contact)" :alt="contact.name" />
                   </figure>
                   <div class="text-capitalize">
                     <h6>{{ contact.name }}</h6>
@@ -98,9 +94,7 @@
               <div class="d-flex align-items-center">
                 <!-- Immagine utente chat -->
                 <figure class="circle-pic user-pic">
-                  <img
-                    :src="'img/avatar' + contact.avatar + '.jpg'"
-                    :alt="contact.name" />
+                  <img :src="buildImgLink(contact)" :alt="contact.name" />
                 </figure>
                 <!-- Info utente chat-->
                 <div role="button">
