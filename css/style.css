@@ -199,13 +199,16 @@ header .last-access {
   padding: 10px 5px 5px 10px;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: white;
-  align-self: flex-start;
 }
 
 .chat-view .message-box.sent {
   align-self: flex-end;
   background-color: rgb(213, 249, 186);
+}
+
+.chat-view .message-box.received {
+  background-color: white;
+  align-self: flex-start;
 }
 
 .chat-view .message-text {

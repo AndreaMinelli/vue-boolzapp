@@ -115,7 +115,7 @@
               <!-- Finestra messaggi -->
               <div
                 v-for="message in contact.messages"
-                :class="['message-box', {'sent' : isSent(message)}]">
+                :class="['message-box', message.status]">
                 <div class="message-text">{{ message.text }}</div>
                 <div class="message-time">{{ message.date }}</div>
               </div>
