@@ -134,7 +134,7 @@ const app = Vue.createApp({
         const thisMoment = (this.newMessage.date = dt
           .now()
           .toFormat("dd'/'LL'/'y' 'HH':'mm':'ss"));
-        this.contacts[this.visibleElement].messages.push({
+        this.whoIsVisible.messages.push({
           ...(this.newMessage = {
             date: thisMoment,
             text: this.newMessage.text,
@@ -150,7 +150,7 @@ const app = Vue.createApp({
         const thisMoment = (this.newMessage.date = dt
           .now()
           .toFormat("dd'/'LL'/'y' 'HH':'mm':'ss"));
-        this.contacts[this.visibleElement].messages.push({
+        this.whoIsVisible.messages.push({
           ...(this.newMessage = {
             date: thisMoment,
             text: "ok",
