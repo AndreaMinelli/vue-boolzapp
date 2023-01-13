@@ -80,8 +80,8 @@
                 <li
                   v-for="(contact, i) in filteredChatList"
                   role="button"
-                  @click="changeChat(i)"
-                  class="">
+                  :class="{'active' : isActive(i)}"
+                  @click="changeChat(i)">
                   <figure class="circle-pic user-pic">
                     <img :src="buildImgLink(contact)" :alt="contact.name" />
                   </figure>

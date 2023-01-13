@@ -171,6 +171,10 @@ header .last-access {
 }
 
 .chat-list li.active {
+  background-color: lightgray;
+}
+
+.chat-list li.active {
   background-color: rgb(233, 235, 235);
 }
 

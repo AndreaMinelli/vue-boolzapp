@@ -105,13 +105,11 @@ const app = Vue.createApp({
     visibleContact() {
       return this.contacts.filter((contact) => contact.visible);
     },
+
     whoIsVisible() {
-      return this.contacts.find((contact, i) => {
-        if (contact.visible) {
-          this.visibleElement = i;
-        }
-      });
+      return this.contacts.find((contact) => contact.visible);
     },
+
     filteredChatList() {
       const chatFilter = this.chatListFilter.toLowerCase();
       return this.contacts.filter((contact) =>
@@ -123,9 +121,13 @@ const app = Vue.createApp({
     buildImgLink(element) {
       return `img/avatar${element.avatar}.jpg`;
     },
+    isActive(i) {
+      return i === this.visibleElement;
+    },
     changeChat(i) {
-      this.contacts[this.visibleElement].visible = false;
+      this.whoIsVisible.visible = false;
       this.filteredChatList[i].visible = true;
+      this.visibleElement = i;
     },
     sentMessage() {
       if (this.newMessage.text) {
