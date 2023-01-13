@@ -98,6 +98,7 @@ const app = Vue.createApp({
         text: "",
         status: "",
       },
+      chatListFilter: "",
     };
   },
   computed: {
@@ -110,6 +111,12 @@ const app = Vue.createApp({
           this.visibleElement = i;
         }
       });
+    },
+    filteredChatList() {
+      const chatFilter = this.chatListFilter.toLowerCase();
+      return this.contacts.filter((contact) =>
+        contact.name.toLowerCase().includes(chatFilter)
+      );
     },
   },
   methods: {

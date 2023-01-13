@@ -69,6 +69,7 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input
                   type="text"
+                  v-model="chatListFilter"
                   placeholder="Cerca o inizia una nuova chat" />
               </div>
             </section>
@@ -76,7 +77,7 @@
             <section class="chat-list">
               <ul>
                 <li
-                  v-for="(contact, i) in contacts"
+                  v-for="(contact, i) in filteredChatList"
                   role="button"
                   @click="changeChat(i)"
                   class="">
