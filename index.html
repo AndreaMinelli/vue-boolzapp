@@ -112,7 +112,8 @@
                 <div role="button">
                   <div class="text-capitalize"><h6>{{ contact.name }}</h6></div>
                   <div class="last-access fw-semibold">
-                    Ultimo accesso oggi alle
+                    Ultimo accesso il
+                    <span>{{ lastChatinfo(contact, 'date') }}</span>
                   </div>
                 </div>
               </div>
