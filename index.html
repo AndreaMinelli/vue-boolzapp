@@ -128,7 +128,8 @@
               <!-- Finestra messaggi -->
               <div
                 v-for="(message, i) in contact.messages"
-                :class="['message-box', message.status]">
+                :class="['message-box', message.status]"
+                ref="message">
                 <div class="d-flex">
                   <div class="message-text">{{ message.text }}</div>
                   <div class="message-options">

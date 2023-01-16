@@ -187,6 +187,11 @@ const app = Vue.createApp({
       } else return element.messages[element.messages.length - 1].date;
     },
   },
+  updated() {
+    const messageNumber = this.$refs.message.length - 1;
+    const lastMessage = this.$refs.message[messageNumber];
+    lastMessage.scrollIntoView();
+  },
 });
 
 app.mount("#root");
