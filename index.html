@@ -118,11 +118,20 @@
             <div class="chat-view">
               <!-- Finestra messaggi -->
               <div
-                v-for="message in contact.messages"
+                v-for="(message, i) in contact.messages"
                 :class="['message-box', message.status]">
-                <div class="message-text">{{ message.text }}</div>
+                <div class="d-flex">
+                  <div class="message-text">{{ message.text }}</div>
+                  <div class="message-options">
+                    <i
+                      @click="showOptions(i)"
+                      class="fa-solid fa-chevron-down"></i>
+                    <ul v-show="i === optionsShowed">
+                      <li class="p-1">Delete message</li>
+                    </ul>
+                  </div>
+                </div>
                 <div class="message-time">{{ message.date }}</div>
-                <i class="fa-solid fa-chevron-down"></i>
               </div>
             </div>
             <footer>

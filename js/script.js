@@ -99,7 +99,7 @@ const app = Vue.createApp({
         status: "",
       },
       chatListFilter: "",
-      refI: 0,
+      optionsShowed: null,
     };
   },
   computed: {
@@ -129,6 +129,7 @@ const app = Vue.createApp({
       this.whoIsVisible.visible = false;
       this.filteredChatList[i].visible = true;
       this.visibleElement = i;
+      this.optionsShowed = null;
     },
     sentMessage() {
       if (this.newMessage.text) {
@@ -167,6 +168,11 @@ const app = Vue.createApp({
       } else {
         this.newMessage.text = "";
       }
+    },
+    showOptions(i) {
+      if (this.optionsShowed === null || this.optionsShowed !== i) {
+        this.optionsShowed = i;
+      } else if (this.optionsShowed !== null) this.optionsShowed = null;
     },
   },
 });

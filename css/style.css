@@ -203,18 +203,31 @@ header .last-access {
   padding: 10px 5px 5px 10px;
   border-radius: 10px;
   margin-bottom: 10px;
-  word-wrap: break-word;
   cursor: pointer;
+}
+
+.message-box .message-options {
+  width: 10%;
   position: relative;
 }
 
-.chat-view .message-box .fa-solid {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: none;
+.chat-view .message-options .fa-solid {
   color: grey;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+.chat-view .message-options ul {
+  position: absolute;
+  white-space: nowrap;
+  right: 50%;
+  top: calc(50% + 8px);
+  font-size: 12px;
+  border: 1px solid black;
+  background-color: white;
 }
 
 .chat-view .message-box:hover .fa-solid {
@@ -233,6 +246,8 @@ header .last-access {
 
 .chat-view .message-text {
   font-size: 14px;
+  word-wrap: break-word;
+  width: 90%;
 }
 .chat-view .message-time {
   text-align: end;
