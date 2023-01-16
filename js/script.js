@@ -174,6 +174,10 @@ const app = Vue.createApp({
         this.optionsShowed = i;
       } else if (this.optionsShowed !== null) this.optionsShowed = null;
     },
+    deleteMessage(i) {
+      this.whoIsVisible.messages.splice(i, 1);
+      this.optionsShowed = null;
+    },
   },
 });
 

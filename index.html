@@ -127,7 +127,9 @@
                       @click="showOptions(i)"
                       class="fa-solid fa-chevron-down"></i>
                     <ul v-show="i === optionsShowed">
-                      <li class="p-1">Delete message</li>
+                      <li @click="deleteMessage(i)" class="p-1">
+                        Delete message
+                      </li>
                     </ul>
                   </div>
                 </div>
