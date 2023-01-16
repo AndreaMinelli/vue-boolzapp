@@ -179,9 +179,14 @@ const app = Vue.createApp({
       this.optionsShowed = null;
     },
     lastChatinfo(element, type) {
-      if (type === "text")
-        return element.messages[element.messages.length - 1].text;
-      else return element.messages[element.messages.length - 1].date;
+      if (type === "text") {
+        let text = element.messages[element.messages.length - 1].text;
+        if (text.length > 10) {
+          text = text.substring(0, 10);
+          text += "...";
+        }
+        return text;
+      } else return element.messages[element.messages.length - 1].date;
     },
   },
 });
