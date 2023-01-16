@@ -178,6 +178,11 @@ const app = Vue.createApp({
       this.whoIsVisible.messages.splice(i, 1);
       this.optionsShowed = null;
     },
+    lastChatinfo(element, type) {
+      if (type === "text")
+        return element.messages[element.messages.length - 1].text;
+      else return element.messages[element.messages.length - 1].date;
+    },
   },
 });
 

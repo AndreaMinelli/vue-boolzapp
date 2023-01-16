@@ -82,11 +82,19 @@
                   role="button"
                   :class="{'active' : isActive(i)}"
                   @click="changeChat(i)">
-                  <figure class="circle-pic user-pic">
-                    <img :src="buildImgLink(contact)" :alt="contact.name" />
-                  </figure>
-                  <div class="text-capitalize">
-                    <h6>{{ contact.name }}</h6>
+                  <div class="d-flex flex-grow-1">
+                    <figure class="circle-pic user-pic">
+                      <img :src="buildImgLink(contact)" :alt="contact.name" />
+                    </figure>
+                    <div>
+                      <h6 class="text-capitalize">{{ contact.name }}</h6>
+                      <div class="last-message-text mt-1">
+                        {{ lastChatinfo(contact, 'text') }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="last-message-time">
+                    {{ lastChatinfo(contact, 'date') }}
                   </div>
                 </li>
               </ul>
