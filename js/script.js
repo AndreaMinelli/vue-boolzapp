@@ -92,7 +92,6 @@ const app = Vue.createApp({
           ],
         },
       ],
-      visibleElement: 0,
       newMessage: {
         date: "",
         text: "",
@@ -128,7 +127,6 @@ const app = Vue.createApp({
     changeChat(i) {
       this.whoIsVisible.visible = false;
       this.filteredChatList[i].visible = true;
-      this.visibleElement = i;
       this.optionsShowed = null;
     },
     sentMessage() {
