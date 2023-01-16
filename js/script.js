@@ -122,8 +122,8 @@ const app = Vue.createApp({
     buildImgLink(element) {
       return `img/avatar${element.avatar}.jpg`;
     },
-    isActive(i) {
-      return i === this.visibleElement;
+    isActive(element) {
+      return element === this.whoIsVisible;
     },
     changeChat(i) {
       this.whoIsVisible.visible = false;
